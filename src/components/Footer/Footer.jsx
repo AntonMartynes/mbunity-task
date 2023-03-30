@@ -1,119 +1,153 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { memo } from "react";
-import { BiAbacus } from "react-icons/bi";
+import { memo, useState } from "react";
 import './Footer.scss';
 
 export const Footer = memo(() => {
+  const [email, setEmail] = useState('');
+
   return (
-      <footer className="footer">
-        <div className="footer__logo__container">Logo Here</div>
-
-        <div className="footer__content">
-          <div className="footer__content__reachUs">
-          <h2 className="footer__group__heading">Reach us</h2>
-          <ul className="reachUs__list">
-            <div className="footer__sv">
-              <li className="footer__icon">
-                <a href="tel:+1012 3456 789" className="footer__icon footer__icon-phone"></a>
-              </li>
-              <li>
-                <a href="tel:+1012 3456 789" className="footer__link">+1012 3456 789</a>
-              </li>
-            </div>
-
-            <div className="footer__sv">
-              <li className="footer__icon">
-                <a href="mailto:demo@gmail.com" className="footer__icon footer__icon-mail"></a>
-              </li>
-              <li>
-                <a href="mailto:demo@gmail.com" className="footer__link">demo@gmail.com</a>
-              </li>
-            </div>
-
-            <div className="footer__sv">
-              <li className="footer__icon">
-                <a href="https://goo.gl/maps/oD4H5WuzsGLrWrJo6" className="footer__icon footer__icon-geo"></a>
-              </li>
-              <li>
-                <a href="https://goo.gl/maps/oD4H5WuzsGLrWrJo6" className="footer__link">
-                  123 Dartmouth Street Boston, <br />
-                  Massachusetts 02156 United States
+    <footer className="footer">
+      <div className="footer__logo__conatainer">
+        <a href="#" className="footer__logo">
+          Logo Here
+        </a>
+      </div>
+      
+      <div className="footer__onDesktop">
+        <div className="footer__group__container">
+          <div className="footer__group reach-us">
+            <h2 className="footer__group__heading">Reach us</h2>
+            <ul className="footer__group">
+              <li className="footer__list__item">
+                <a
+                  href="tel:+1012 3456 789"
+                  className="footer__icon footer__icon-phone"
+                ></a>
+                <a href="tel:+1012 3456 789" className="footer__link">
+                  +1012 3456 789
                 </a>
               </li>
-            </div>
-          </ul>
+              <li className="footer__list__item">
+                <a
+                  href="mailto:demo@gmail.com"
+                  className="footer__icon footer__icon-mail"
+                ></a>
+                <a href="mailto:demo@gmail.com" className="footer__link">
+                  demo@gmail.com
+                </a>
+              </li>
+              <li className="footer__list__item">
+                <a
+                  href="https://goo.gl/maps/oD4H5WuzsGLrWrJo6"
+                  className="footer__icon footer__icon-geo"
+                ></a>
+                <a
+                  href="https://goo.gl/maps/oD4H5WuzsGLrWrJo6"
+                  className="footer__link"
+                >
+                  132 Dartmouth Street
+                  <br />
+                  Boston, Massachusetts
+                  <br />
+                  02156 United States
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="footer__group company">
+            <h2 className="footer__group__heading">Company</h2>
+            <ul className="footer__group">
+              <li>
+                <a href="#" className="footer__link">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="#" className="footer__link">
+                  Contact
+                </a>
+              </li>
+              <li>
+                <a href="#" className="footer__link">
+                  Blogs
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div className="footer__group__container">
-          <h2 className="footer__group__heading">Company</h2>
-          <ul className="footer__group">
-            <li className="footer__link__group">
-              <a href="/" className="footer__link">About</a>
-            </li>
-            <li className="footer__link__group">
-              <a href="/" className="footer__link">Contact</a>
-            </li>
-            <li className="footer__link__group">
-              <a href="/" className="footer__link">Blogs</a>
-            </li>
-          </ul>
+          <div className="footer__group">
+            <h2 className="footer__group__heading">Legal</h2>
+            <ul className="footer__group">
+              <li>
+                <a href="#" className="footer__link">
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a href="#" className="footer__link">
+                  Terms & Services
+                </a>
+              </li>
+              <li>
+                <a href="#" className="footer__link">
+                  Terms of Use
+                </a>
+              </li>
+              <li>
+                <a href="#" className="footer__link">
+                  Refund Policy
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="footer__group">
+            <h2 className="footer__group__heading">Quick Links</h2>
+            <ul className="footer__group">
+              <li className="footer__link__wrapper">
+                <a href="#" className="footer__link">
+                  Techlabz Keybox
+                </a>
+              </li>
+              <li className="footer__link__wrapper">
+                <a href="#" className="footer__link">
+                  Downloads
+                </a>
+              </li>
+              <li className="footer__link__wrapper">
+                <a href="#" className="footer__link">
+                  Forum
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div className="footer__content_legal">
-          <h2 className="footer__group__heading">Legal</h2>
-          <ul className="footer__group">
-            <li className="footer__link__group">
-              <a href="#" className="footer__link">Privacy Policy</a>
-            </li>
-            <li className="footer__link__group">
-              <a href="#" className="footer__link">Terms & Services</a>
-            </li>
-            <li className="footer__link__group">
-              <a href="#" className="footer__link">Terms of Use</a>
-            </li>
-            <li className="footer__link__group">
-              <a href="#" className="footer__link">Refund Policy</a>
-            </li>
-          </ul>
-        </div>
+        <form action="" onSubmit={event => {event.preventDefault(); setEmail('')}} className="newsletterForm">
+          <h2 className="newsletterForm__heading">Join Our Newsletter</h2>
 
-        <div className="footer__content_quickLinks">
-        <h2 className="footer__group__heading">Legal</h2>
-          <ul className="footer__group">
-            <li className="footer__link__group">
-              <a href="#" className="footer__link">Techlabz Keybox</a>
-            </li>
-            <li className="footer__link__group">
-              <a href="#" className="footer__link">Downloads</a>
-            </li>
-            <li className="footer__link__group">
-              <a href="#" className="footer__link">Forum</a>
-            </li>
-          </ul>
-        </div>
-
-        <div className="footer__content__subscribeForm">
-        <h2 className="footer__group__heading">Join Our Newsletter</h2>
-        <div className="footer__group">
-          <div className="subscribeAre">
+          <div className="newsletterForm__input__container">
             <input 
-              type="email"
-              name="email"
-              placeholder="Your email address" 
+              type="email" 
+              placeholder='Your email address' 
+              className="newsletterForm__input"
+              value={email}
+              onChange={event => setEmail(event.target.value)}
             />
+            <button type='submit' className="newsletterForm__btn" >
+              Subscribe
+            </button>
+          </div>  
 
-            <button type="submit" className="footer__button">Subscribe</button>
-          </div>
-
-          <div className="subscribe_policy">
-            * Will send you weekly updates for your better tool managment.
-          </div>
-        </div>
+          <p className="newsletterForm__text">
+            *Will send you weekly updates for your better tool management.
+          </p>
+        </form>
       </div>
-      </div>
-
-
     </footer>
   );
 })
