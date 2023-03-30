@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, ReactNode } from 'react';
 import { NavLink } from 'react-router-dom';
 import cn from 'classnames';
 

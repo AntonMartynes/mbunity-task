@@ -1,52 +1,46 @@
+/* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { memo, useState } from 'react';
+import React from 'react';
 import './Header.scss';
-import logo from './imgForHeader/logo.svg';
-import cn from 'classnames';
-import menuOpen from './imgForHeader/menu_button-open.svg';
-import menuClose from './imgForHeader/menu_button-close.svg';
-import { Link } from 'react-router-dom';
 
-const navLinkInfo = [
-  { to: '#', text: 'Home' },
-  { to: '#', text: 'Features' },
-  { to: '#', text: 'Blog' },
-  { to: '#', text: 'Shop' },
-  { to: '#', text: 'About' },
-  { to: '#', text: 'Contact' },
-];
 
-export const Header = memo(() => {
-  const [isOpenMenu, setIsOpen] = useState(false);
+export const Header = ({ openMenu }) => {
   return (
-    <header className='header'>
-      <div className="nav">
-        <div className="nav__link">
-          <a href="/" className="nav__link--logo">
-            <img src={logo} alt="logo" />
-          </a>
-
-          <div
-            className="nav__link--menu nav__link--menu-open"
-            onClick={() => setIsOpen(!isOpenMenu)}
-            aria-hidden="true"
-          >
-            <img src={isOpenMenu ? menuClose : menuOpen} alt="menu-open" />
-          </div>
-        </div>
-      </div>
-
-      <nav className={(cn('navigation', { navigation__mobile: !isOpenMenu }))}>
-      <ul className="navigation__list">
-          {navLinkInfo.map(el => (
-            <li key={el.text} className="navigation__item">
-              <a href="#" setIsOpen={setIsOpen}>
-                {el.text}
-              </a>
+    <header>
+      <div className="header__container">
+        <a href="#" className="header__logo">Logo Here</a>
+        <button type="button" onClick={openMenu} className="header__iconLink" aria-label="Menu"></button>
+        <nav className="header__nav">
+          <ul className="header__nav-ul">
+            <li className="header__list__item">
+              <a href="#" className="header__link">Home</a>
             </li>
-          ))}
-        </ul>
-      </nav>
+            <li className="header__list__item">
+              <a href="#" className="header__link">Features</a>
+            </li>
+            <li className="header__list__item">
+              <a href="#" className="header__link">Blog</a>
+            </li>
+            <li className="header__list__item">
+              <a href="#" className="header__link">Shop</a>
+            </li>
+            <li className="header__list__item">
+              <a href="#" className="header__link">About</a>
+            </li>
+            <li className="header__list__item">
+              <a href="#" className="header__link">Contact</a>
+            </li>
+          </ul>
+          <div className="header__icon__links__container">
+            <a href="#" className="header__icon__link__container">
+              <div className="header__icon__link header__icon__link--profile"></div>
+            </a>
+            <a href="#" className="header__icon__link__container">
+              <div className="header__icon__link header__icon__link--cart"></div>
+            </a>
+          </div>
+        </nav>
+      </div>
     </header>
   );
-});
+};
